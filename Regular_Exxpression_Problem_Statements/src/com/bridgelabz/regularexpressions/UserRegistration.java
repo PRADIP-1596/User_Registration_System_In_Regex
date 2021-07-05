@@ -1,12 +1,11 @@
    package com.bridgelabz.regularexpressions;
   
-
    import java.util.Scanner;
 
    public class UserRegistration {
    	Scanner scan = new Scanner(System.in);
 
-  
+   	
    	// Function to verify FirstName and print whether it is valid or not:
 
    	public void verifyFirstName() {
@@ -19,7 +18,7 @@
    		System.out.println("\n");
    	}
 
-   
+  
    	// Function to verify LastName and print whether it is valid or not:
 
    	public void verifyLastName() {
@@ -58,17 +57,20 @@
    		System.out.println("\n");
    	}
 
-   	
+  
    	// Function to verify if there are minimum 8 characters in password:
-   	
+   
    	// Updated Function to verify if there is at least 1 Upper Case Character:
    	
    	// Updated Function to verify if there is at least 1 Numeric Character:
+   	
+   	// Updated Function to verify if there is exact one special Character:
 
    	public void verifyPassword() {
    		System.out.println("Enter Password:");
    		String password = scan.next();
-   		if (password.matches("(?=.*[A-Z])(?=.*[0-9])[[a-zA-Z0-9!@#$%^&*]+]{8,}") == true)
+   		if (password.matches(
+   				"(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=^[^!@#$%^&*]*[!@#$%^&*][^!@#$%^&*]*$)[a-zA-Z0-9!@#$%^&*]{8,}") == true)
    			System.out.println("It is a valid Password");
    		else
    			System.out.println("It is an invalid Password");
